@@ -1,0 +1,97 @@
+.section {
+	&-container {
+		min-height: 100vh;
+		width: 100%;
+		background-image: linear-gradient(
+			to bottom right,
+			#f0ece5,
+			rgba($secondary-color, 0.6)
+		);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include respond(tablet) {
+			flex-direction: column;
+			height: max-content;
+		}
+	}
+	&-left {
+		width: 60%;
+		padding: 10rem;
+		@include respond(tablet) {
+			width: 70%;
+			padding: 5rem;
+		}
+	}
+	&-heading {
+		font-size: 3.5rem;
+	}
+	&-text {
+		font-size: 1.5rem;
+		text-align: justify;
+	}
+	&-form {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@include respond(tablet) {
+			align-items: center;
+		}
+	}
+	&-btn {
+		width: 10rem;
+		padding: 0.5rem 1rem;
+		margin-top: 1rem;
+		border-radius: 1rem;
+		outline: none;
+		border: none;
+		transform: translateY(5px);
+		box-shadow: 0 0.5rem 1rem rgba(#000, 0.8);
+		cursor: pointer;
+
+		&:hover {
+			transform: translateY(0);
+			transition: all 0.3s;
+			box-shadow: 0 1rem 2rem rgba(#000, 0.6);
+		}
+
+		&:active {
+			transform: translateY(2px);
+			transition: all 0.3s;
+			box-shadow: 0 0.7rem 1.3rem rgba(#000, 0.7);
+		}
+	}
+
+	&-right {
+		width: 40%;
+		@include respond(tablet) {
+			width: 70%;
+			text-align: center;
+		}
+	}
+	&-img {
+		border-radius: 50%;
+		height: 40rem;
+		width: 45rem;
+		@include respond(tablet) {
+			height: 25rem;
+			width: 25rem;
+		}
+	}
+}
+
+.form-input {
+	font-size: 1.2rem;
+	padding: 0.8rem;
+	border-radius: 1rem;
+	outline: none;
+	border: none;
+	margin-top: 0.8rem;
+
+	&:focus {
+		outline: $primary-color solid 2px;
+		transition: all 0.05s;
+	}
+}

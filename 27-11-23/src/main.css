@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  font-size: 1.5rem;
+  background-color: #5f6f52;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .logo-box {
+  width: 10rem;
+  padding: 0.7rem;
+  margin-left: 2rem;
+}
+.header .logo-img {
+  width: 100%;
+  border-radius: 50%;
+}
+.header .nav-container {
+  padding: 1rem;
+}
+.header .nav-container .nav-list {
+  display: flex;
+  list-style: none;
+}
+.header .nav-container .nav-item {
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+.header .nav-container .nav-item:not(:last-child) {
+  margin-left: 1.2rem;
+}
+.header .nav-container .nav-item::after {
+  content: "";
+  height: 0.3rem;
+  background-color: black;
+  width: 0%;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  border-radius: 1rem;
+}
+.header .nav-container .nav-item:hover::after {
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.section-container {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #f0ece5, rgba(169, 179, 136, 0.6));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 54rem) {
+  .section-container {
+    flex-direction: column;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
+.section-left {
+  width: 60%;
+  padding: 10rem;
+}
+@media (max-width: 54rem) {
+  .section-left {
+    width: 70%;
+    padding: 5rem;
+  }
+}
+.section-heading {
+  font-size: 3.5rem;
+}
+.section-text {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+.section-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media (max-width: 54rem) {
+  .section-form {
+    align-items: center;
+  }
+}
+.section-btn {
+  width: 10rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  transform: translateY(5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+.section-btn:hover {
+  transform: translateY(0);
+  transition: all 0.3s;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.6);
+}
+.section-btn:active {
+  transform: translateY(2px);
+  transition: all 0.3s;
+  box-shadow: 0 0.7rem 1.3rem rgba(0, 0, 0, 0.7);
+}
+.section-right {
+  width: 40%;
+}
+@media (max-width: 54rem) {
+  .section-right {
+    width: 70%;
+    text-align: center;
+  }
+}
+.section-img {
+  border-radius: 50%;
+  height: 40rem;
+  width: 45rem;
+}
+@media (max-width: 54rem) {
+  .section-img {
+    height: 25rem;
+    width: 25rem;
+  }
+}
+
+.form-input {
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  outline: none;
+  border: none;
+  margin-top: 0.8rem;
+}
+.form-input:focus {
+  outline: #5f6f52 solid 2px;
+  transition: all 0.05s;
+}/*# sourceMappingURL=main.css.map */
