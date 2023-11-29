@@ -1,4 +1,4 @@
-function Header() {
+const Header = () => {
 	return (
 		<div className="header">
 			<div className="logo-box">
@@ -18,6 +18,6 @@ function Header() {
 			</nav>
 		</div>
 	);
-}
+};
 
 export default Header;
