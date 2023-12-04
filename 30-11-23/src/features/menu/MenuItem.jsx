@@ -1,8 +1,35 @@
+import { useDispatch, useSelector } from "react-redux";
 import Button from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
+import {
+  addItem,
+  decreaseItemQty,
+  deleteItem,
+  increaseItemQty,
+} from "../cart/cartSlice";
+import { clearConfigCache } from "prettier";
 
 function MenuItem({ pizza }) {
+  const cart = useSelector((store) => store.cart.cart);
+
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
+  const dispatch = useDispatch();
+
+  const item = cart.find((item) => {
+    return item.pizzaId === id;
+  });
+
+  const handleClick = () => {
+    const pizza = {
+      pizzaId: id,
+      name,
+      unitPrice,
+      quantity: 1,
+      totalPrice: unitPrice,
+    };
+
+    dispatch(addItem(pizza));
+  };
 
   return (
     <li className="flex gap-4 p-2">
@@ -25,9 +52,41 @@ function MenuItem({ pizza }) {
             </p>
           )}
 
-          <Button className="ml-auto px-2 py-1 text-[0.75rem]">
-            Add to Cart
-          </Button>
+          {!soldOut && (
+            <>
+              {!item && (
+                <Button
+                  className="ml-auto px-2 py-1 text-[0.75rem]"
+                  onClick={handleClick}
+                >
+                  Add to Cart
+                </Button>
+              )}
+              {item?.quantity > 0 && (
+                <div className="ml-auto">
+                  <button
+                    onClick={() => dispatch(increaseItemQty(id))}
+                    className="mx-2 inline-block rounded-full border-2 px-1 py-1 font-semibold uppercase text-stone-800 transition-colors duration-300 hover:border-green-400 focus:outline-none focus:ring focus:ring-green-300 focus:ring-offset-2 disabled:cursor-not-allowed"
+                  >
+                    ➕
+                  </button>
+                  <span>{item.quantity}</span>
+                  <button
+                    onClick={() => dispatch(decreaseItemQty(id))}
+                    className="mx-2 inline-block rounded-full border-2 px-1 py-1 font-semibold uppercase text-stone-800 transition-colors duration-300 hover:border-red-400 focus:outline-none focus:ring focus:ring-red-300 focus:ring-offset-2 disabled:cursor-not-allowed"
+                  >
+                    ➖
+                  </button>
+                  <button
+                    onClick={() => dispatch(deleteItem(id))}
+                    className="inline-block rounded-full border-2 px-1 py-1 font-semibold uppercase text-stone-800 transition-colors duration-300 hover:border-red-400 focus:outline-none focus:ring focus:ring-red-300 focus:ring-offset-2 disabled:cursor-not-allowed"
+                  >
+                    🗑️
+                  </button>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
     </li>
