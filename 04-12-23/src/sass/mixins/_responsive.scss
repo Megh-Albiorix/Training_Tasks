@@ -1,0 +1,12 @@
+@mixin respond($break-point) {
+	@if $break-point == "tab" {
+		@media screen and (max-width: 768px) {
+			@content;
+		}
+	}
+	@if $break-point == "phone" {
+		@media screen and (max-width: 435px) {
+			@content;
+		}
+	}
+}

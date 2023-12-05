@@ -1,0 +1,134 @@
+.blog {
+	@include flex-center-col;
+	&-header {
+		@include flex-center-col;
+		width: 40%;
+		text-align: center;
+		@include respond("tab") {
+			width: 80%;
+		}
+	}
+	&-heading {
+		font-size: 3.5rem;
+		letter-spacing: 0.4px;
+		line-height: 2.8rem;
+		font-weight: 500;
+		margin: 1.7rem 0;
+	}
+	&-text {
+		font-size: 1.8rem;
+		letter-spacing: 0.5px;
+		color: rgb(150, 148, 148);
+	}
+
+	&-posts {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		padding: 5rem;
+
+		@include respond("tab") {
+			flex-direction: column;
+			width: 100%;
+			padding: 5rem 5rem 0rem 5rem;
+		}
+	}
+	&-post {
+		@include flex-center-col;
+		flex: 0 0 30%;
+		@include respond("tab") {
+			width: 100%;
+			justify-content: flex-start;
+			align-items: flex-start;
+			margin-bottom: 6rem;
+		}
+	}
+	&-box {
+		width: 70%;
+		@include respond("tab") {
+			width: 85%;
+			margin-left: 2rem;
+		}
+	}
+	&__img-box {
+		width: 80%;
+		display: flex;
+		justify-content: center;
+		@include respond("tab") {
+			height: 23rem;
+			border-radius: 10px;
+			overflow: hidden;
+			width: 100%;
+		}
+	}
+	&-img {
+		width: 100%;
+		@include respond("tab") {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&-profile {
+		&-details {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+			width: 70%;
+			margin: 1.5rem 0;
+		}
+		&-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+		&-img {
+			width: 5rem;
+		}
+		&-heading {
+			font-size: 1.8rem;
+			color: $text-color-lighter;
+		}
+		&-text {
+			font-size: 1.2rem;
+			color: rgb(150, 148, 148);
+		}
+	}
+
+	&-post {
+		&-details {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
+		&-heading {
+			font-size: 2.6rem;
+			letter-spacing: 0.4px;
+			line-height: 2.8rem;
+			font-weight: 500;
+		}
+		&-text {
+			font-size: 1.7rem;
+			color: $text-color-lighter;
+			margin: 1.2rem 0;
+			@include respond("tab") {
+				margin: 1.8rem 0;
+			}
+		}
+	}
+
+	&-tags {
+		display: flex;
+		gap: 0.7rem;
+	}
+	&-tag {
+		font-size: 1.4rem;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		padding: 0.3rem 0.6rem;
+		border-radius: 30px;
+	}
+
+	@include respond("tab") {
+	}
+}

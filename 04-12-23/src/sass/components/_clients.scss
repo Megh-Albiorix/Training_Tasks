@@ -1,0 +1,41 @@
+.clients {
+	width: 70%;
+	height: max-content;
+	padding: 15rem 0 15rem 0;
+	text-align: center;
+	&__logos {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(1rem, 15rem));
+		gap: 15rem;
+		row-gap: 3rem;
+		justify-content: center;
+		align-items: center;
+		@include respond("tab") {
+			row-gap: 10rem;
+			column-gap: 20rem;
+		}
+		@include respond("phone") {
+			row-gap: 8rem;
+		}
+	}
+
+	&__heading {
+		font-size: 4rem;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		margin-bottom: 5.5rem;
+		margin-inline-start: 3rem;
+
+		@include respond("phone") {
+		}
+	}
+
+	&__img {
+		width: 20rem;
+	}
+
+	@include respond("tab") {
+		height: max-content;
+		padding: 0rem 0 10rem 0;
+	}
+}

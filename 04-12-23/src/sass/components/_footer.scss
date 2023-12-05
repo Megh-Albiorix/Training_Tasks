@@ -1,0 +1,105 @@
+.footer {
+	width: 100%;
+	height: max-content;
+	padding: 0rem 12rem 4rem 12rem;
+
+	@include respond("tab") {
+		padding: 0rem 4rem 4rem 4rem;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		border-bottom: 1px solid rgb(217, 216, 216);
+		padding-bottom: 4rem;
+		@include respond("tab") {
+			display: flex;
+			flex-direction: column;
+			gap: 3rem;
+		}
+
+		@include respond("phone") {
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&__company-info {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2.5rem;
+		flex-basis: 30%;
+
+		@include respond("phone") {
+			@include flex-center-col;
+		}
+	}
+
+	&__lists {
+		display: flex;
+		justify-content: space-between;
+		flex-basis: 65%;
+		overflow: hidden;
+
+		@include respond("phone") {
+			flex-wrap: wrap;
+			row-gap: 3rem;
+		}
+
+		@include respond("tab") {
+			flex-basis: 100%;
+		}
+	}
+
+	&__list-heading {
+		font-size: 2rem;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		margin-bottom: 2rem;
+	}
+
+	&__list {
+		list-style: none;
+
+		&-container {
+			@include respond(phone) {
+				min-width: 40vw;
+			}
+		}
+	}
+	&__list-item {
+		font-size: 1.7rem;
+		letter-spacing: 0.5px;
+		color: $text-color-lighter;
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+	&__copyright {
+		width: 100%;
+		margin-top: 5rem;
+		display: flex;
+		justify-content: space-between;
+
+		&-text {
+			font-size: 1.7rem;
+			color: rgb(54, 54, 54);
+			font-weight: 400;
+		}
+
+		&-tc {
+			display: flex;
+			gap: 1.5rem;
+			&-line {
+				background-color: rgb(200, 200, 200);
+				height: 2rem;
+				width: 0.1rem;
+			}
+			&-link {
+				font-size: 1.7rem;
+				text-decoration: none;
+				color: #1a75ff;
+			}
+		}
+	}
+}

@@ -1,0 +1,91 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 1.5rem 3rem;
+	width: 95%;
+
+	// @include respond(tab) {
+	// 	position: relative;
+	// }
+
+	&__logo {
+		margin-left: 3rem;
+		padding: 0.5rem;
+	}
+
+	@include respond("tab") {
+		overflow: hidden;
+	}
+}
+
+.nav {
+	@include flex-center;
+	margin-right: 3.5rem;
+
+	&-container {
+		padding: 0.5rem;
+
+		@include respond(tab) {
+			background-color: rgba(242, 242, 242, 0.9);
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			// width: 0;
+			visibility: hidden;
+			display: flex;
+			justify-content: center;
+			z-index: 50;
+			width: 40rem;
+			transition: width 0.3s;
+		}
+	}
+
+	&-list {
+		list-style: none;
+		font-size: 2rem;
+		font-weight: 400;
+		color: $text-color;
+		@include flex-center;
+
+		@include respond(tab) {
+			flex-direction: column;
+			align-items: center;
+			gap: 5rem;
+			position: absolute;
+			top: 15%;
+			font-size: 3.5rem;
+			font-weight: 500;
+		}
+	}
+	&-item {
+		margin-right: 2rem;
+	}
+
+	&-link,
+	&-link:visited,
+	&-link:active {
+		color: inherit;
+		text-decoration: none;
+		position: relative;
+	}
+
+	&-link::after {
+		content: "";
+		width: 0;
+		height: 2px;
+		background-color: $text-color;
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+	}
+
+	&-link:hover::after {
+		width: 100%;
+		transition: all 0.3s;
+	}
+
+	& .primary-btn {
+		width: 100%;
+	}
+}

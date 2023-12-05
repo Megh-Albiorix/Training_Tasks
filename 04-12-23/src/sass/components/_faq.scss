@@ -1,0 +1,110 @@
+.faq {
+	margin: 8rem 0;
+	@include flex-center-col;
+	&-header {
+		@include flex-center-col;
+		text-align: center;
+	}
+	&-heading {
+		font-size: 4rem;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		margin: 2rem 0;
+	}
+	&-text {
+		font-size: 1.8rem;
+		letter-spacing: 0.5px;
+		color: $text-color-lighter;
+		width: 70%;
+		text-align: center;
+	}
+	&-accordian {
+	}
+	&-accordian-box {
+		@include flex-center-col;
+		margin: 7rem 0;
+		gap: 1rem;
+	}
+
+	& .accordian-item {
+		padding: 3.5rem 3rem;
+		width: 80rem;
+		border: 1px solid rgb(223, 221, 221);
+		border-radius: 10px;
+
+		@include respond("tab") {
+			width: 70rem;
+		}
+		@include respond("tab") {
+			width: 47rem;
+		}
+	}
+
+	& .accordian-title-box {
+		display: flex;
+		justify-content: space-between;
+	}
+	& .accordian-title {
+		font-size: 2rem;
+		font-weight: 400;
+		letter-spacing: 0.5px;
+	}
+
+	& .accordian-answer {
+		font-size: 1.8rem;
+		margin-top: 3rem;
+		letter-spacing: 0.5px;
+		line-height: 2.5rem;
+		color: $text-color-lighter;
+		width: 100%;
+	}
+
+	&-footer {
+		width: 50%;
+		padding: 3rem 7rem;
+		text-align: center;
+		@include flex-center-col;
+		gap: 1.8rem;
+		background-color: #f0f6ff;
+		border-radius: 15px;
+		&-heading {
+			font-size: 2.5rem;
+			font-weight: 500;
+			letter-spacing: 0.5px;
+			color: $text-color-dark-blue;
+		}
+		&-text {
+			font-size: 1.8rem;
+			letter-spacing: 0.5px;
+			color: $text-color-dark-blue;
+			@include respond("tab") {
+				font-size: 1.6rem;
+				margin: 2rem 0;
+			}
+		}
+		@include respond("tab") {
+			width: 75%;
+			padding: 3rem 3rem;
+		}
+	}
+}
+
+.accordian-btn,
+.accordian-btn:focus {
+	width: 2rem;
+	height: 2rem;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+	border-radius: 50%;
+
+	@include respond("phone") {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
+	&:hover {
+		outline: 1px solid $text-color-lighter;
+	}
+}

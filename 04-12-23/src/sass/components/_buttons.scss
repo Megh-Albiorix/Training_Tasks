@@ -1,0 +1,45 @@
+.primary-btn {
+	font-size: 1.8rem;
+	letter-spacing: 0.5px;
+	background-color: #1a75ff;
+	color: #fff;
+	padding: 1rem 1.2rem;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	@include flex-center;
+
+	&:hover {
+		background-color: #4a90fb;
+		transition: all 0.1s;
+	}
+
+	@include respond("tab") {
+		padding: 1.3rem 1.6rem;
+	}
+	@include respond("phone") {
+		width: 95%;
+	}
+}
+
+.secondary-btn {
+	font-size: 1.8rem;
+	letter-spacing: 0.5px;
+	background-color: #ffffff;
+	border: 1px solid #b1b0b0;
+	border-radius: 5px;
+	padding: 1rem 1.2rem;
+	cursor: pointer;
+
+	@include flex-center;
+
+	&:hover {
+		background-color: #afafaf;
+		color: #ffffff;
+		border: 1px solid rgb(47, 47, 47);
+		transition: all 0.1s;
+	}
+	@include respond("phone") {
+		width: 95%;
+	}
+}

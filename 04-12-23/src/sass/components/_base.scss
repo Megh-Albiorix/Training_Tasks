@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+$text-color: #141c24;
+$text-color-lighter: #444647;
+$text-color-dark-blue: #002966;
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+	@include respond("tab") {
+		font-size: 55%;
+	}
+	@include respond("phone") {
+		font-size: 50%;
+	}
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+.nav-icon-box {
+	height: 3rem;
+	width: 3rem;
+	margin: 1rem;
+	// display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	position: relative;
+	display: none;
+	z-index: 100;
+
+	@include respond(tab) {
+		display: flex;
+	}
+}
+
+.nav-icon {
+	width: 1.7rem;
+	height: 0.3rem;
+	background-color: #444647;
+	border-radius: 3px;
+
+	&::before {
+		content: "";
+		width: 3.5rem;
+		height: 0.3rem;
+		background-color: #444647;
+		border-radius: 3px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&::after {
+		content: "";
+		width: 4.5rem;
+		height: 0.3rem;
+		background-color: #444647;
+		border-radius: 3px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
+
+.nav-btn {
+	background-color: transparent;
+	border: none;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.section-highlight {
+	font-size: 1.4rem;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	color: #0052cc;
+	background-color: #e5f0ff;
+	padding: 0.5rem 1rem;
+	border-radius: 30px;
+}
+
+.logo {
+	@include flex-center;
+	gap: 1rem;
+
+	&-img {
+		width: 4.5rem;
+	}
+
+	&-text {
+		font-size: 2.5rem;
+		font-weight: 500;
+		letter-spacing: 2px;
+
+		@include respond(phone) {
+			display: none;
+		}
+	}
+}
+
+.social {
+	display: flex;
+	gap: 1.7rem;
+	&__link {
+	}
+	&__icon {
+		width: 2.5rem;
+	}
+}
+
+.text-small {
+	font-size: 1.7rem;
+	letter-spacing: 0.5px;
+	color: $text-color-lighter;
+}
+
+.contact {
+	&__heading {
+		font-size: 2rem;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		margin-bottom: 2rem;
+	}
+	&__detail {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+	&__text {
+		font-size: 1.7rem;
+		letter-spacing: 0.5px;
+		color: $text-color-lighter;
+	}
+
+	&__icon {
+		width: 2.7rem;
+	}
+}
+
+// font-family: 'Poppins', sans-serif;
+// font-family: 'Roboto', sans-serif;
